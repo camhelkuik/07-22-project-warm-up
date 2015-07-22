@@ -1,0 +1,8 @@
+<h1>Edit Post</h1>
+
+<%= form_tag users_path(@user.id), :method => "put" do %>
+<input type="text" name="user[email]" placeholder="Email" value="<%= @user.email %>">
+
+<input type="submit">
+
+<% end %>

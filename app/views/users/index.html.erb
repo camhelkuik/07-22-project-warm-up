@@ -1,0 +1,9 @@
+<h1>All Users</h1>
+
+<% @user.all.each do |user| %>
+<p><%= user.email %></p>
+
+<a href="<%= user_path(user.id) %>" data-method="delete">Delete</a>
+<a href="<%= edit_user_path(user.id) %>">Edit</a>
+
+<% end %>
