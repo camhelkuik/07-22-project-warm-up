@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :tasks
   
-  get "users" => 'users#index', :as => "users"
+  get "home" => 'users#index', :as => "users"
   
   delete "users/:id" => 'users#destroy'
   
@@ -14,8 +14,13 @@ Rails.application.routes.draw do
   
   get "users/new" => 'users#new', :as => "new_user"
   
+  get "users/logout" => 'users#logout'
+  
   get "users/:id" => 'users#show', :as => "user"
   
+  post "users/login" => 'users#login'
+  
+  post "users/sign_up" => 'users#sign_up'
   
   
   # The priority is based upon order of creation: first created -> highest priority.

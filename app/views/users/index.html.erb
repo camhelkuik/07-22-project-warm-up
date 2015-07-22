@@ -1,9 +1,22 @@
-<h1>All Users</h1>
+<h1>Sign Up</h1>
 
-<% @user.all.each do |user| %>
-<p><%= user.email %></p>
+<%= form_tag("/users/sign_up", :method => "post") do %>
 
-<a href="<%= user_path(user.id) %>" data-method="delete">Delete</a>
-<a href="<%= edit_user_path(user.id) %>">Edit</a>
+<input type="text" name="user[email]" placeholder="Email">
+<input type="password" name="user[password]" placeholder="Password">
+
+<input type="submit">
+
+<% end %>
+
+
+<h1>Login</h1>
+
+<%= form_tag("/users/login", :method => "post") do %>
+
+<input type="text" name="user[email]" placeholder="Email">
+<input type="password" name="user[password]" placeholder="Password">
+
+<input type="submit">
 
 <% end %>

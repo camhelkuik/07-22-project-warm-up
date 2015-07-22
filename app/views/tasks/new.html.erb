@@ -2,7 +2,7 @@
 
 <%= form_tag tasks_path, :method => "post" do %>
 <input type="text" name= "task[description]]" placeholder="Description">
-<input type="number" name= "task[user_id]" placeholder="User_id">
+<input type="hidden" name= "task[user_id]" >
 
 <input type="submit">
 

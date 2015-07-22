@@ -10,7 +10,8 @@ class TasksController < ApplicationController
   end
   
   def show
-    @task = Task.find(params[:id])
+    @task = Task.where("user_id" => session[:user_id])
+    @user = User.find(session[:user_id])
   end
   
   def new
@@ -21,7 +22,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     
     if @task.save
-      redirect_to tasks_path
+      redirect_to task_path(session[:user_id])
     else
       render "new"
     end
@@ -35,7 +36,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     
     if @task.update_attributes(task_params)
-      redirect_to tasks_path
+      redirect_to task_path(session[:user_id])
     else
       render "edit"
     end
