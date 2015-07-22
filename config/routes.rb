@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   
   get "users/new" => 'users#new', :as => "new_user"
   
-  get "users/logout" => 'users#logout'
+  get "logout" => 'users#logout', :as => 'logout'
   
   get "users/:id" => 'users#show', :as => "user"
   

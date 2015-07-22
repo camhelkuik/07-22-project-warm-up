@@ -3,7 +3,7 @@
 
 <a href="<%= edit_user_path(@user.id) %>">Edit User Info</a>
 <a href="<%= users_path(@user.id) %>" data-method="delete">Delete User Profile</a>
-<a href="<%= new_task_path %>">Add new task</a>
+<a href="<%= logout_path %>">LOGOUT</a>
 
 <% @task.each do |t| %>
 
@@ -13,3 +13,5 @@
 <a href="<%= edit_task_path(task.id) %>">Edit</a>
 
 <% end %>
+
+<a href="<%= new_task_path %>">Add new task</a>
