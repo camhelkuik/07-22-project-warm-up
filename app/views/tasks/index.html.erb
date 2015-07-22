@@ -1,0 +1,9 @@
+<h1>All Tasks</h1>
+
+<% @task.all.each do |task| %>
+<p><%= task.description %></p>
+
+<a href="<%= task_path(task.id) %>" data-method="delete">Delete</a>
+<a href="<%= edit_task_path(task.id) %>">Edit</a>
+
+<% end %>

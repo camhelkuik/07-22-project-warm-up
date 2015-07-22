@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :tasks
+  
   get "users" => 'users#index', :as => "users"
   
   delete "users/:id" => 'users#destroy'
@@ -13,9 +15,6 @@ Rails.application.routes.draw do
   get "users/new" => 'users#new', :as => "new_user"
   
   get "users/:id" => 'users#show', :as => "user"
-  
-  
-  
   
   
   
