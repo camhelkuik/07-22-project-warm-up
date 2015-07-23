@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   
   post "users/login" => 'users#login'
   
-  post "users/sign_up" => 'users#sign_up'
+  post "signup" => 'users#sign_up', :as => "signup"
   
   get "profile" => 'users#show', :as => "profile"
   
