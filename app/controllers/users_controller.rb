@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     session[:user_id] = @user[0].id
 
     if actual_password == attempted_password
-      redirect_to user_path(session[:user_id])
+      redirect_to profile_path
     else
       @user.errors << "Invalid login."
     
@@ -49,29 +49,29 @@ class UsersController < ApplicationController
     @task = Task.where("user_id" => session[:user_id])
   end
   
-  def new
-    @user = User.new
-  end
-  
-  def create
-    @user = User.new(user_params)
-    
-    if @user.save
-      redirect_to users_path
-    else
-      render "new"
-    end
-  end
+  # def new
+  #   @user = User.new
+  # end
+  #
+  # def create
+  #   @user = User.new(user_params)
+  #
+  #   if @user.save
+  #     redirect_to users_path
+  #   else
+  #     render "new"
+  #   end
+  # end
   
   def edit
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
   
   def update
     @user = User.find(params[:id])
     
     if @user.update_attributes(user_params)
-      redirect_to user_path(session[:user_id])
+      redirect_to profile_path
     else
       render "edit"
     end

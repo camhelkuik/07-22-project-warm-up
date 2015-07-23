@@ -6,7 +6,7 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to user_path(session[:user_id])
+    redirect_to profile_path
   end
   
   def show
@@ -22,7 +22,7 @@ class TasksController < ApplicationController
     @task = Task.new({"user_id" => session[:user_id], "description" => params["task"]["description"]})
     
     if @task.save
-      redirect_to user_path(session[:user_id])
+      redirect_to profile_path
     else
       render "new"
     end
@@ -36,7 +36,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     
     if @task.update_attributes(task_params)
-      redirect_to user_path(session[:user_id])
+      redirect_to profile_path
     else
       render "edit"
     end

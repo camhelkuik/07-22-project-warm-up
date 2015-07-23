@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+    
   resources :tasks
   
   get "home" => 'users#index', :as => "users"
@@ -21,6 +21,12 @@ Rails.application.routes.draw do
   post "users/login" => 'users#login'
   
   post "users/sign_up" => 'users#sign_up'
+  
+  get "profile" => 'users#show', :as => "profile"
+  
+  get "profile/edit" => 'users#edit', :as => "profile_edit"
+  
+  
   
   
   # The priority is based upon order of creation: first created -> highest priority.
