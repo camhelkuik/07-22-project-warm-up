@@ -6,7 +6,7 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to tasks_path
+    redirect_to user_path(session[:user_id])
   end
   
   def show
@@ -19,7 +19,7 @@ class TasksController < ApplicationController
   end
   
   def create
-    @task = Task.new({"user_id" => session[:user_id]], "description" => params["task"]["description"]})
+    @task = Task.new({"user_id" => session[:user_id], "description" => params["task"]["description"]})
     
     if @task.save
       redirect_to user_path(session[:user_id])

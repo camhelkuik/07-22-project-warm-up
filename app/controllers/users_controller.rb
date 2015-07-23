@@ -38,14 +38,14 @@ class UsersController < ApplicationController
   end
   
   def destroy
-    @user = User.find(session[:id])
+    @user = User.find(session[:user_id])
     @user.destroy
     session.clear
-    render "index"
+    redirect_to users_path
   end
   
   def show
-    @user = User.find(session[:id])
+    @user = User.find(session[:user_id])
     @task = Task.where("user_id" => session[:user_id])
   end
   
