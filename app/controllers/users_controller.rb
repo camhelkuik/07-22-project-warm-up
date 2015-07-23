@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
       session[:user_id] = new_user.id
 
-      redirect_to user_path(new_user.id)
+      redirect_to profile_path
     else
       @errors = "Invalid Login"
       render "index"
