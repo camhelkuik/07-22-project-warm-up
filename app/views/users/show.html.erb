@@ -1,16 +1,23 @@
-  <h1><%= @user.email %></h1>
+<div class= "nav">
+  <ul>
+    <li><a href="<%= profile_path %>">My Profile</a></li>
+    <li><a href="<%= profile_edit_path %>">Edit User Info</a></li>
+    <li><a href="<%= user_path(@user.id) %>" data-method="delete">Delete User Profile</a></li>
+    <li><a href="<%= logout_path %>">LOGOUT</a></li>
+  </ul>
+</div>
 
-<a href="<%= profile_edit_path %>">Edit User Info</a>
-<a href="<%= user_path(@user.id) %>" data-method="delete">Delete User Profile</a>
-<a href="<%= logout_path %>">LOGOUT</a>
+<h1><%= @user.email %></h1>
+<a href="<%= new_task_path %>">Add new task</a>
 
+<div>
 <% @task.each do |t| %>
 
-  <p><%= t.description %></p>
+<p><%= t.description %></p>
   
 <a href="<%= task_path(t.id) %>" data-method="delete">Delete</a>
 <a href="<%= edit_task_path(t.id) %>">Edit</a>
 
 <% end %>
 
-<a href="<%= new_task_path %>">Add new task</a>
+</div>

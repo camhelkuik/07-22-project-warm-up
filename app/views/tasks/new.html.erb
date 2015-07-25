@@ -1,3 +1,12 @@
+<div class= "nav">
+  <ul>
+    <li><a href="<%= profile_path %>">My Profile</a></li>
+    <li><a href="<%= profile_edit_path %>">Edit User Info</a></li>
+    <li><a href="<%= user_path(session[:user_id]) %>" data-method="delete">Delete User Profile</a></li>
+    <li><a href="<%= logout_path %>">LOGOUT</a></li>
+  </ul>
+</div>
+
 <h1>New Task</h1>
 
 <%= form_tag tasks_path, :method => "post" do %>
