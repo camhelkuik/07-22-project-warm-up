@@ -6,7 +6,7 @@
     <li><a href="<%= logout_path %>">LOGOUT</a></li>
   </ul>
 </div>
-<h1>Edit Post</h1>
+<h1>Edit Profile Info</h1>
 
 <%= form_tag user_path(@user.id), :method => "put" do %>
 <input type="text" name="user[email]" placeholder="Email" value="<%= @user.email %>">

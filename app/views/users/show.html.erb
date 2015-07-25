@@ -7,17 +7,21 @@
   </ul>
 </div>
 
-<h1><%= @user.email %></h1>
-<a href="<%= new_task_path %>">Add new task</a>
+<div class= "user_name">
+  <h1><%= @user.email %></h1>
+  <a href="<%= new_task_path %>">Add new task</a>
+</div>
 
 <div>
-<% @task.each do |t| %>
-
-<p><%= t.description %></p>
   
-<a href="<%= task_path(t.id) %>" data-method="delete">Delete</a>
-<a href="<%= edit_task_path(t.id) %>">Edit</a>
-
-<% end %>
-
+ 
+  <% @task.each do |t| %>
+  <div class= "task_list">
+    <p><%= t.description %></p>
+  
+    <a href="<%= task_path(t.id) %>" data-method="delete">Delete</a>
+    <a href="<%= edit_task_path(t.id) %>">Edit</a>
+  </div>
+  <% end %>
+ 
 </div>

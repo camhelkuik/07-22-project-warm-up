@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+ul, li{
+  display: inline;
+  padding-right: 45px;
+}
+
+.user_name {
+  text-align: center;
+}
+
+.task_list {
+    border-bottom: solid;
+    padding-bottom: 20px;
